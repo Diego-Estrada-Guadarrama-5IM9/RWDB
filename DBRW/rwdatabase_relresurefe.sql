@@ -16,28 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ensayo`
+-- Table structure for table `relresurefe`
 --
 
-DROP TABLE IF EXISTS `ensayo`;
+DROP TABLE IF EXISTS `relresurefe`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ensayo` (
-  `idEnsayo` int(11) NOT NULL AUTO_INCREMENT,
-  `intro` text,
-  `desarrollo` text,
-  `conclusion` text,
-  PRIMARY KEY (`idEnsayo`)
+CREATE TABLE `relresurefe` (
+  `idRelResuRefe` int(11) NOT NULL AUTO_INCREMENT,
+  `idRefere` int(11) DEFAULT NULL,
+  `idResumen` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idRelResuRefe`),
+  KEY `idRefere_idx` (`idRefere`),
+  KEY `idResumen_idx` (`idResumen`),
+  CONSTRAINT `idRefere` FOREIGN KEY (`idRefere`) REFERENCES `referencias` (`idReferencias`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `idResumen` FOREIGN KEY (`idResumen`) REFERENCES `resumen` (`idResumen`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ensayo`
+-- Dumping data for table `relresurefe`
 --
 
-LOCK TABLES `ensayo` WRITE;
-/*!40000 ALTER TABLE `ensayo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ensayo` ENABLE KEYS */;
+LOCK TABLES `relresurefe` WRITE;
+/*!40000 ALTER TABLE `relresurefe` DISABLE KEYS */;
+/*!40000 ALTER TABLE `relresurefe` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
