@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `rwdatabase` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `rwdatabase`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rwdatabase
@@ -33,8 +31,6 @@ CREATE TABLE `articulo` (
   `resultados` text,
   `discusion` text,
   `conclusiones` text,
-  `IdReferecias` int(11) DEFAULT NULL,
-  `idApendices` int(11) DEFAULT NULL,
   PRIMARY KEY (`idArticulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -57,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-29  8:47:41
+-- Dump completed on 2018-10-30 14:27:32

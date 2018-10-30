@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `rwdatabase` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `rwdatabase`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rwdatabase
@@ -26,7 +24,6 @@ DROP TABLE IF EXISTS `dialogos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dialogos` (
   `idDialogos` int(11) NOT NULL AUTO_INCREMENT,
-  `idPersonaje` int(11) DEFAULT NULL,
   `contenido` text,
   `acotaciones` varchar(220) DEFAULT NULL,
   PRIMARY KEY (`idDialogos`)
@@ -51,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-29  8:47:40
+-- Dump completed on 2018-10-30 14:27:31

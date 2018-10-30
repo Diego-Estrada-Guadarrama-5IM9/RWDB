@@ -16,30 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `personaje`
+-- Table structure for table `relestrofatipo`
 --
 
-DROP TABLE IF EXISTS `personaje`;
+DROP TABLE IF EXISTS `relestrofatipo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `personaje` (
-  `idPersonaje` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) DEFAULT NULL,
-  `personalidad` text,
-  `apariencia` varchar(200) DEFAULT NULL,
-  `motivaciones` varchar(220) DEFAULT NULL,
-  `habitos` varchar(220) DEFAULT NULL,
-  PRIMARY KEY (`idPersonaje`)
+CREATE TABLE `relestrofatipo` (
+  `idRelEstrofaTipo` int(11) NOT NULL AUTO_INCREMENT,
+  `idTipo` int(11) DEFAULT NULL,
+  `idEstrofa` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idRelEstrofaTipo`),
+  KEY `idTipo_idx` (`idTipo`),
+  KEY `idEstrofa_idx` (`idEstrofa`),
+  CONSTRAINT `idEstrofa` FOREIGN KEY (`idEstrofa`) REFERENCES `estrofa` (`idEstrofa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `idTipo` FOREIGN KEY (`idTipo`) REFERENCES `tipo` (`idTipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `personaje`
+-- Dumping data for table `relestrofatipo`
 --
 
-LOCK TABLES `personaje` WRITE;
-/*!40000 ALTER TABLE `personaje` DISABLE KEYS */;
-/*!40000 ALTER TABLE `personaje` ENABLE KEYS */;
+LOCK TABLES `relestrofatipo` WRITE;
+/*!40000 ALTER TABLE `relestrofatipo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `relestrofatipo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-30 14:27:32
+-- Dump completed on 2018-10-30 14:27:33

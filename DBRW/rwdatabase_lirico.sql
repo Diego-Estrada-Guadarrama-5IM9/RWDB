@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `rwdatabase` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `rwdatabase`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rwdatabase
@@ -27,7 +25,9 @@ DROP TABLE IF EXISTS `lirico`;
 CREATE TABLE `lirico` (
   `idLirico` int(11) NOT NULL AUTO_INCREMENT,
   `idEstrofa` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idLirico`)
+  PRIMARY KEY (`idLirico`),
+  KEY `idEstrof_idx` (`idEstrofa`),
+  CONSTRAINT `idEstrof` FOREIGN KEY (`idEstrofa`) REFERENCES `estrofa` (`idEstrofa`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-29  8:47:42
+-- Dump completed on 2018-10-30 14:27:32
