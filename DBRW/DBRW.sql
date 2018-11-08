@@ -57,7 +57,7 @@ UNLOCK TABLES;
 CREATE TABLE `personaje` (
   `idPersonaje` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
-  `personalidad` text,
+  `personalidad` mediumtext,
   `apariencia` varchar(200) DEFAULT NULL,
   `motivaciones` varchar(220) DEFAULT NULL,
   `habitos` varchar(220) DEFAULT NULL,
@@ -109,9 +109,9 @@ UNLOCK TABLES;
 CREATE TABLE `ensayo` (
   `idEnsayo` int(11) NOT NULL AUTO_INCREMENT,
   `idRelObraTipoobra` int(11) DEFAULT NULL,
-  `intro` text,
-  `desarrollo` text,
-  `conclusion` text,
+  `intro` mediumtext,
+  `desarrollo` mediumtext,
+  `conclusion` mediumtext,
   PRIMARY KEY (`idEnsayo`),
   FOREIGN KEY (`idRelObraTipoobra`) REFERENCES `relObraTipoobra` (`idRelObraTipoobra`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -123,7 +123,7 @@ UNLOCK TABLES;
 CREATE TABLE `apendices` (
   `idApendices` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(100) DEFAULT NULL,
-  `contenido` text,
+  `contenido` mediumtext,
   PRIMARY KEY (`idApendices`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;LOCK TABLES `apendices` WRITE;
 /*!40000 ALTER TABLE `apendices` DISABLE KEYS */;
@@ -133,13 +133,13 @@ UNLOCK TABLES;
 CREATE TABLE `articulo` (
   `idArticulo` int(11) NOT NULL AUTO_INCREMENT,
   `idRelObraTipoobra` int(11) DEFAULT NULL,
-  `resumen` text,
-  `autores` text,
-  `materiales` text,
-  `metodos` text,
-  `resultados` text,
-  `discusion` text,
-  `conclusiones` text,
+  `resumen` mediumtext,
+  `autores` mediumtext,
+  `materiales` mediumtext,
+  `metodos` mediumtext,
+  `resultados` mediumtext,
+  `discusion` mediumtext,
+  `conclusiones` mediumtext,
   FOREIGN KEY (`idRelObraTipoobra`) REFERENCES `relObraTipoobra` (`idRelObraTipoobra`),
   PRIMARY KEY (`idArticulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -150,7 +150,7 @@ UNLOCK TABLES;
 
 CREATE TABLE `dialogos` (
   `idDialogos` int(11) NOT NULL AUTO_INCREMENT,
-  `contenido` text,
+  `contenido` mediumtext,
   `acotaciones` varchar(220) DEFAULT NULL,
   PRIMARY KEY (`idDialogos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -186,10 +186,10 @@ UNLOCK TABLES;
 CREATE TABLE `narrativo` (
   `idNarrativo` int(11) NOT NULL AUTO_INCREMENT,
   `idRelObraTipoobra` int(11) DEFAULT NULL,
-  `exposicion` text,
-  `desarrollo` text,
-  `desenlace` text,
-  `climax` text,
+  `exposicion` mediumtext,
+  `desarrollo` mediumtext,
+  `desenlace` mediumtext,
+  `climax` mediumtext,
   FOREIGN KEY (`idRelObraTipoobra`) REFERENCES `relObraTipoobra` (`idRelObraTipoobra`),
   PRIMARY KEY (`idNarrativo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -201,7 +201,7 @@ UNLOCK TABLES;
 CREATE TABLE `resumen` (
   `idResumen` int(11) NOT NULL AUTO_INCREMENT,
   `idRelObraTipoobra` int(11) DEFAULT NULL,
-  `contenido` text,
+  `contenido` mediumtext,
   `claves` varchar(45) DEFAULT NULL,
   `idReferencias` int(11) DEFAULT NULL,
   FOREIGN KEY (`idRelObraTipoobra`) REFERENCES `relObraTipoobra` (`idRelObraTipoobra`),
