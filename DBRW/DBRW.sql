@@ -7,6 +7,7 @@ CREATE TABLE `usuario` (
   `usuario` varchar(45) DEFAULT NULL,
   `correo` varchar(45) DEFAULT NULL,
   `contraseña` varchar(45) DEFAULT NULL,
+  `imagen` longblob default null, 
   PRIMARY KEY (`idUsuario`),
   UNIQUE KEY `correo_UNIQUE` (`correo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
