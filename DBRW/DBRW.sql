@@ -203,7 +203,6 @@ CREATE TABLE `resumen` (
   `idRelObraTipoobra` int(11) DEFAULT NULL,
   `contenido` mediumtext,
   `claves` varchar(45) DEFAULT NULL,
-  `idReferencias` int(11) DEFAULT NULL,
   FOREIGN KEY (`idRelObraTipoobra`) REFERENCES `relObraTipoobra` (`idRelObraTipoobra`),
   PRIMARY KEY (`idResumen`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
